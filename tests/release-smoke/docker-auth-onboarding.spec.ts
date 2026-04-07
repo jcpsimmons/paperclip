@@ -36,7 +36,7 @@ async function openOnboarding(page: Page) {
     )
     .toBe(true);
 
-  if (await startButton.isVisible()) {
+  if (!(await wizardHeading.isVisible()) && (await startButton.isVisible())) {
     await startButton.click();
   }
 
